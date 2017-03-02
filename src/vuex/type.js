@@ -1,0 +1,5 @@
+export const GET_COUNT = 'counter/GET_COUNT'
+export const FETCH_INCREMENT = 'counter/INCREMENT'
+export const FETCH_DECREMENT = 'counter/DECREMENT'
+export const INCREMENT = 'counter/INCREMENT'
+export const DECREMENT = 'counter/DECREMENT'
