@@ -1,12 +1,14 @@
 <template>
   <div class="home">
     <div class="home-head">
+
       <div class="home-head-logo">
         <img
         src="../assets/images/logo.png"
         alt="">
         <p>编程是门艺术</p>
       </div>
+
       <div class="home-nav">
         <ul>
           <li>
@@ -25,7 +27,20 @@
             </router-link>
           </li>
         </ul>
+        <div class="head-language">
+          <span
+          @click='selectCn'
+          v-text='lan.currentLanguage'
+          :class="{'current-language': lan.currentLanguage === '中文'}">
+          </span>
+          <span
+          @click='selectEn'
+          v-text='lan.otherLanguage'
+          :class="{'current-language': lan.currentLanguage === 'EN'}">
+          </span>
+        </div>
       </div>
+
     </div>
 
     <div class="home-main">
@@ -42,17 +57,39 @@
 </template>
 
 <script>
+
+  import {
+    mapGetters,
+    mapActions
+  } from 'vuex'
+
+  import {
+    lan
+  } from '../vuex/types'
+
   export default {
+
     components: {
     },
 
     data() {
       return {
-        loadding: true
+        loadding: true,
+        currentLanguage: true
       }
     },
 
+    computed: {
+      ...mapGetters({
+        lan: lan.G
+      })
+    },
+
     methods: {
+      ...mapActions({
+        cn: lan.AC,
+        en: lan.AE
+      }),
       redirectRouter() {
         this.$router.push('./me')
       },
@@ -60,10 +97,15 @@
         setTimeout(() => {
           this.loadding = false
         }, 500)
+      },
+      selectCn() {
+      },
+      selectEn() {
       }
     },
 
     mounted() {
+      console.log(lan.G)
       this.redirectRouter()
       this.transformLoad()
     }
@@ -76,36 +118,40 @@
     flex-direction: column;
   }
   .home-head {
-    padding: .2rem .7rem;
+    padding: 2rem 7rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     .home-head-logo {
       display: flex;
       align-items: center;
       img {
-        width: .5rem;
+        width: 5rem;
       }
       p {
-        margin: 0 .3rem;
+        margin: 0 3rem;
         font-family: fantasy;
-        font-size: .2rem;
+        font-size: 2rem;
       }
     }
+
     .home-nav {
-      ul {
+      display: flex;
+      justify-content: space-between;
+      &>ul {
         width: 100%;
         display: flex;
         li {
           position: relative;
-          font-size: .2rem;
+          font-size: 2rem;
           align-items: center;
           a {
             width: 100%;
             height: 100%;
-            padding: .1rem .2rem;
+            padding: 1rem 2rem;
             display: inline-block;
-            border-radius: .03rem;
+            border-radius: 0.3rem;
             box-sizing: border-box;
           }
           .router-link-active {
@@ -119,7 +165,7 @@
         li:hover {
           &:after {
             content: '';
-            height: .02rem;
+            height: 0.2rem;
             width: 100%;
             display: block;
             background-color: $primeColor;
@@ -130,19 +176,43 @@
         }
       }
     }
+
+    .head-language {
+      & {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-left: $commonDistance;
+        width: 10rem;
+        text-align: center;
+      }
+      span {
+        display: block;
+      }
+      span:hover {
+        cursor: pointer;
+      }
+      .current-language {
+        flex: 1;
+        display: block;
+        font-size: 1.6rem;
+        color: $primeColor;
+      }
+    }
   }
+
 
   .home-main {
     flex: 1;
     display: flex;
     background: #f5f5f5;
-    padding: 0 .5rem;
+    padding: 0 5rem;
 
     .home-entry {
       flex: 1;
       margin: $commonDistance;
       background: #fff;
-      border-radius: .05rem;
+      border-radius: 0.5rem;
       padding: $commonDistance;
     }
   }
