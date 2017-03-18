@@ -30,12 +30,12 @@
         <div class="head-language">
           <span
           @click='selectCn'
-          v-text='lan.currentLanguage'
+          v-text='cn'
           :class="{'current-language': lan.currentLanguage === '中文'}">
           </span>
           <span
           @click='selectEn'
-          v-text='lan.otherLanguage'
+          v-text='en'
           :class="{'current-language': lan.currentLanguage === 'EN'}">
           </span>
         </div>
@@ -81,7 +81,8 @@
 
     computed: {
       ...mapGetters({
-        lan: lan.G
+        cn: lan.GC,
+        en: lan.GN
       })
     },
 

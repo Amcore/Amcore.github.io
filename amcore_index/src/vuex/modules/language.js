@@ -3,45 +3,41 @@ import {
 } from '../types'
 
 const {
-  G,
-  C,
-  E,
+  GC,
+  GE,
+  CN,
+  EN,
   AC,
   AE
 } = lan
 
 const language = {
   state: {
-    lan: {
-      currentLanguage: '中文',
-      otherLanguage: 'EN'
-    }
+    currentLanguage: '中文',
+    otherLanguage: 'EN'
   },
   getters: {
-    [G]: (state) => state.lan
+    [GC]: (state) => state.currentLanguage,
+    [GE]: (state) => state.otherLanguage
   },
   mutations: {
-    [C](state) {
+    [CN](state) {
       console.log(1)
-      state.lan = {
-        currentLanguage: '中文',
-        otherLanguage: 'EN'
-      }
+      state.currentLanguage = '中文'
+      state.otherLanguage = 'EN'
     },
-    [E](state) {
+    [EN](state) {
       console.log(2)
-      state.lan = {
-        currentLanguage: 'EN',
-        otherLanguage: '中文'
-      }
+      state.currentLanguage = 'EN'
+      state.otherLanguage = '中文'
     }
   },
   actions: {
     [AC]({commit}) {
-      commit(C)
+      commit(CN)
     },
     [AE]({commit}) {
-      commit(E)
+      commit(EN)
     }
   }
 }
