@@ -29,14 +29,14 @@
         </ul>
         <div class="head-language">
           <span
-          @click='selectCn'
+          @click='changCn'
           v-text='cn'
-          :class="{'current-language': lan.currentLanguage === '中文'}">
+          :class="{'current-language': cn === '中文'}">
           </span>
           <span
-          @click='selectEn'
+          @click='changEn'
           v-text='en'
-          :class="{'current-language': lan.currentLanguage === 'EN'}">
+          :class="{'current-language': en !== 'EN'}">
           </span>
         </div>
       </div>
@@ -81,15 +81,15 @@
 
     computed: {
       ...mapGetters({
-        cn: lan.GC,
-        en: lan.GN
+        cn: lan.GCN,
+        en: lan.GEN
       })
     },
 
     methods: {
       ...mapActions({
-        cn: lan.AC,
-        en: lan.AE
+        changCn: lan.ACN,
+        changEn: lan.AEN
       }),
       redirectRouter() {
         this.$router.push('./me')
@@ -100,14 +100,14 @@
         }, 500)
       },
       selectCn() {
+        this.cn()
       },
       selectEn() {
+        this.en()
       }
     },
 
     mounted() {
-      console.log(lan.G)
-      this.redirectRouter()
       this.transformLoad()
     }
   }

@@ -1,12 +1,22 @@
 const lan = {
-  GC: 'language/GET_CN',
-  GE: 'language/GET_EN',
-  CN: 'language/LAN_CN',
-  EN: 'language/LAN_EN',
-  AC: 'language/FET_CN',
-  AE: 'language/FET_EN'
+  GCN: 'language/GET_CN',
+  GEN: 'language/GET_EN',
+  MCN: 'language/LAN_CN',
+  MEN: 'language/LAN_EN',
+  ACN: 'language/FET_CN',
+  AEN: 'language/FET_EN'
+}
+
+const count = {
+  G: 'counter/GET_COUNT',
+  N: 'cuunter/GET_EN',
+  F: 'counter/FETCH_ALL',
+  T: 'counter/SOME_TEST',
+  A: 'counter/FETCH_TEST',
+  M: 'counter/INCREMENT'
 }
 
 export {
-  lan
+  lan,
+  count
 }
