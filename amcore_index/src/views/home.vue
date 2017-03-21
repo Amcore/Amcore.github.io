@@ -30,13 +30,17 @@
         <div class="head-language">
           <span
           @click='changCn'
-          v-text='cn'
-          :class="{'current-language': cn === '中文'}">
+          :class="{
+            'current-language': cn === '中文',
+            'waiting-language': cn !== '中文'}">
+          中文
           </span>
           <span
           @click='changEn'
-          v-text='en'
-          :class="{'current-language': en !== 'EN'}">
+          :class="{
+            'current-language': en !== 'EN',
+            'waiting-language': en === 'EN'}">
+          En
           </span>
         </div>
       </div>
@@ -184,8 +188,9 @@
         display: flex;
         align-items: center;
         margin-left: $commonDistance;
-        width: 10rem;
         text-align: center;
+        width: 8rem;
+        justify-content: space-between;
       }
       span {
         display: block;
@@ -194,10 +199,33 @@
         cursor: pointer;
       }
       .current-language {
-        flex: 1;
         display: block;
         font-size: 1.6rem;
         color: $primeColor;
+        animation: toggle-small-big .5s linear;
+      }
+      .waiting-language {
+        animation: toggle-big-small .5s linear;
+      }
+      @keyframes toggle-big-small {
+        from {
+          font-size: 1.6rem;
+          color: $primeColor;
+        }
+        to {
+          font-size: 1rem;
+          color: #000;
+        }
+      }
+      @keyframes toggle-small-big {
+        from {
+          font-size: 1rem;
+          color: #000;
+        }
+        to {
+          font-size: 1.6rem;
+          color: $primeColor;
+        }
       }
     }
   }
