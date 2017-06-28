@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-const Home = resolve => require(['../views/home'], resolve)
-const En = resolve => require(['../views/en'], resolve)
-const Cn = resolve => require(['../views/cn'], resolve)
-const Work = resolve => require(['../views/work'], resolve)
-const Project = resolve => require(['../views/project'], resolve)
-const Banqiao = resolve => require(['../views/banqiao'], resolve)
-const Kingcore = resolve => require(['../views/kingcore'], resolve)
-const Person = resolve => require(['../views/person'], resolve)
-const End = resolve => require(['../views/end'], resolve)
+const Home = require('../views/home')
+const En = require('../views/en')
+const Cn = require('../views/cn')
+const Work = require('../views/work')
+const Project = require('../views/project')
+const Banqiao = require('../views/banqiao')
+const Kingcore = require('../views/kingcore')
+const Person = require('../views/person')
+const End = require('../views/end')
 
 Vue.use(Router)
 
