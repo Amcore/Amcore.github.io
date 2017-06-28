@@ -3,11 +3,10 @@
     <div class='home'>
       <div class="home__bg">
       </div>
-      <div class="home__main">
+      <div class="home__main"
+      @click='toResume'>
         <img src="../assets/images/logo.png" alt="">
         <div class="home__main__main">
-          <router-link to='/en'>En</router-link>
-          <span>/</span>
           <router-link to='/cn'>Cn</router-link>
         </div>
       </div>
@@ -27,8 +26,8 @@
     },
 
     methods: {
-      goEn() {
-        window.alert(111)
+      toResume() {
+        this.$router.push('/cn')
       }
     }
   }

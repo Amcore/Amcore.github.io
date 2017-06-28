@@ -2,26 +2,45 @@
   <div class="project">
 
     <div class="cn__banner">
-      <p>项目经验</p>
+      <p>自我描述</p>
     </div>
 
     <div class="project__main">
 
       <div class="project__main__item">
-        <p class="item__name">3板桥</p>
+        <p class="item__name"></p>
         <p class="item__content">
           <p class="item__content__title">
-            3板桥后台管理系统
+            对于前端
           </p>
           <p class="item__content__content">
-            后台管理员PC端。文章管理（文章编辑，修改，添加文章，富文本编辑器），用户文章评论。用户审核。其中页面用到的组件包括input select button等页面小组件自主完成
+            热爱前端，关注一些例如掘金等互联网动态。平常喜欢写一些Vue的组件，对于js新特性保持关注。有些时候为了一个问题而睡不找。
+          </p>
+        </p>
+        <p class="item__content">
+          <p class="item__content__title">
+            日常使用工具
+          </p>
+          <p class="item__content__content">
+            Git，webpack，Atom, sublime，scss
+          </p>
+        </p>
+        <p class="item__content">
+          <p class="item__content__title">
+            其他信息
+          </p>
+          <p class="item__content__content">
+            个人博客：<br>
+            <a href="http://www.jianshu.com/u/6feba298ece4">http://www.jianshu.com/u/6feba298ece4</a>
+            github:<br>
+            <a href="https://github.com/Amcore">https://github.com/Amcore</a>
           </p>
         </p>
       </div>
 
     </div>
 
-    <div class="page__next" @click='goKingcore'>
+    <div class="page__next" @click='goEnd'>
       <i class="arrow-first fa fa-caret-down"></i>
       <i class="arrow-last fa fa-chevron-down"></i>
     </div>
@@ -32,8 +51,8 @@
 <script>
   export default {
     methods: {
-      goKingcore() {
-        this.$router.push('/kingcore')
+      goEnd() {
+        this.$router.push('/end')
       }
     }
   }
@@ -81,8 +100,16 @@
           margin: 0px 0px 10px 0px;
         }
         .item__content__content {
+          margin-top: 0;
+          margin-bottom: 10px;
           line-height: 1.5;
           color: #999999;
+
+          a {
+            font-size: 14px;
+            text-decoration: none;
+            color: #20a0ff;
+          }
         }
 
       }

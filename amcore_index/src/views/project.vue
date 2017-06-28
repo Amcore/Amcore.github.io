@@ -56,6 +56,10 @@
       font-weight: bold;
       box-sizing: border-box;
       border-bottom: 1px solid #ececec;
+
+      p {
+        margin: 20px 0;
+      }
     }
 
     .project__main {

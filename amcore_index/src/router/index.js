@@ -9,6 +9,7 @@ const Project = require('../views/project')
 const Banqiao = require('../views/banqiao')
 const Kingcore = require('../views/kingcore')
 const Person = require('../views/person')
+const Self = require('../views/self')
 const End = require('../views/end')
 
 Vue.use(Router)
@@ -55,6 +56,11 @@ export default new Router({
       path: '/person',
       name: 'person',
       component: Person
+    },
+    {
+      path: '/self',
+      name: 'self',
+      component: Self
     },
     {
       path: '/end',

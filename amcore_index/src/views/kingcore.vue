@@ -25,7 +25,19 @@
             kingcore后台管理
           </p>
           <p class="item__content__content">
-            阿道夫啦枷梢对方理解啊收到了房间阿里斯顿解放啦枷梢对方
+            菜单管理，分类管理，产品管理，首页导航管理等，轮播图管理。
+            自行开发菜单列表组件，文件上传组件。分级菜单分级处理。
+          </p>
+        </p>
+        <p class="item__content">
+          <p class="item__content__title">
+            项目地址
+          </p>
+          <p class="item__content__content">
+            kingCore:
+            <a href="http://www.kingcore.tenmaker.com">www.kingcore.tenmaker.com</a><br>
+            后台:
+            <a href="http://www.eadmin.tenmaker.com">www.eadmin.tenmaker.com</a>
           </p>
         </p>
       </div>
@@ -65,6 +77,10 @@
       font-weight: bold;
       box-sizing: border-box;
       border-bottom: 1px solid #ececec;
+
+      p {
+        margin: 20px 0;
+      }
     }
 
     .project__main {

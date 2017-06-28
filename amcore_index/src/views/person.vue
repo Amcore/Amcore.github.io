@@ -2,37 +2,50 @@
   <div class="project">
 
     <div class="cn__banner">
-      <p>项目经验</p>
+      <p>个人项目</p>
     </div>
 
     <div class="project__main">
 
       <div class="project__main__item">
-        <p class="item__name">kingcore电商</p>
+        <p class="item__name">amma Vue ui 库（开发中）</p>
         <p class="item__content">
           <p class="item__content__title">
-            kingcore前台页面
+            message
           </p>
           <p class="item__content__content">
-            语言的选择（利用vuex进行语言状态的读取与选择）
-            首页热销商品的展示
-            商品列表页
-            商品详情页（购买链接外链亚马逊）
+            利用vue提供的extend方法对组件进行包装，添加在原姓链上从而方便调用。
           </p>
         </p>
         <p class="item__content">
           <p class="item__content__title">
-            kingcore后台管理
+            input
           </p>
           <p class="item__content__content">
-            阿道夫啦枷梢对方理解啊收到了房间阿里斯顿解放啦枷梢对方
+            对input组件通过emit实现数据的传递，使得vue2中v-model在子组件能通过v-model进行方便使用。
+          </p>
+        </p>
+        <p class="item__content">
+          <p class="item__content__title">
+            input
+          </p>
+          <p class="item__content__content">
+            对input组件通过emit实现数据的传递，使得vue2中v-model在子组件能通过v-model进行方便使用。
+          </p>
+        </p>
+        <p class="item__content">
+          <p class="item__content__title">
+            其他组件
+          </p>
+          <p class="item__content__content">
+            下来菜单、switch组件、树形菜单、button组件等
           </p>
         </p>
       </div>
 
     </div>
 
-    <div class="page__next" @click='goEnd'>
+    <div class="page__next" @click='goSelf'>
       <i class="arrow-first fa fa-caret-down"></i>
       <i class="arrow-last fa fa-chevron-down"></i>
     </div>
@@ -43,8 +56,8 @@
 <script>
   export default {
     methods: {
-      goEnd() {
-        this.$router.push('/end')
+      goSelf() {
+        this.$router.push('/self')
       }
     }
   }
@@ -65,6 +78,10 @@
       font-weight: bold;
       box-sizing: border-box;
       border-bottom: 1px solid #ececec;
+
+      p {
+        margin: 20px 0;
+      }
     }
 
     .project__main {
@@ -88,6 +105,8 @@
           margin: 0px 0px 10px 0px;
         }
         .item__content__content {
+          margin-top: 0;
+          margin-bottom: 10px;
           line-height: 1.5;
           color: #999999;
         }
