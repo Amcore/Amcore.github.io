@@ -2,9 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 const Home = resolve => require(['../views/home'], resolve)
-const Me = resolve => require(['../views/me'], resolve)
-const Like = resolve => require(['../views/like'], resolve)
-const Date = resolve => require(['../views/date'], resolve)
+const En = resolve => require(['../views/en'], resolve)
+const Cn = resolve => require(['../views/cn'], resolve)
 
 Vue.use(Router)
 
@@ -14,24 +13,17 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home,
-      children: [
-        {
-          path: '/me',
-          name: 'Me',
-          component: Me
-        },
-        {
-          path: '/like',
-          name: 'like',
-          component: Like
-        },
-        {
-          path: '/date',
-          name: 'date',
-          component: Date
-        }
-      ]
+      component: Home
+    },
+    {
+      path: '/en',
+      name: 'en',
+      component: En
+    },
+    {
+      path: '/cn',
+      name: 'Cn',
+      component: Cn
     },
     {
       path: '*',

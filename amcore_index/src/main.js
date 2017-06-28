@@ -9,6 +9,7 @@ import Icon from 'vue-icon'
 import AmLoad from './components/am-load'
 import './assets/styles/index.css'
 import 'normalize.css/normalize.css'
+import 'font-awesome/css/font-awesome.css'
 
 Vue.component('am-icon', Icon)
 Vue.component('AmLoad', AmLoad)

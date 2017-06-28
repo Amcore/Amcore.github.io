@@ -1,266 +1,97 @@
 <template>
-  <div class="home">
-    <div class="home-head">
-
-      <div class="home-head-logo">
-        <img
-        src="../assets/images/logo.png"
-        alt="">
-        <p>编程是门艺术</p>
+  <transition name='home-fade'>
+    <div class='home'>
+      <div class="home__bg">
       </div>
-
-      <div class="home-nav">
-        <ul>
-          <li>
-            <router-link to='/me'>
-              <am-icon name="home"></am-icon>
-            </router-link>
-          </li>
-          <li>
-            <router-link to='/like'>
-              <am-icon name="like"></am-icon>
-            </router-link>
-          </li>
-          <li>
-            <router-link to='/date'>
-              <am-icon name="form"></am-icon>
-            </router-link>
-          </li>
-        </ul>
-        <div class="head-language">
-          <span
-          @click='changCn'
-          :class="{
-            'current-language': cn === '中文',
-            'waiting-language': cn !== '中文'}">
-          中文
-          </span>
-          <span
-          @click='changEn'
-          :class="{
-            'current-language': en !== 'EN',
-            'waiting-language': en === 'EN'}">
-          En
-          </span>
+      <div class="home__main">
+        <img src="../assets/images/logo.png" alt="">
+        <div class="home__main__main">
+          <router-link to='/en'>En</router-link>
+          <span>/</span>
+          <router-link to='/cn'>Cn</router-link>
         </div>
       </div>
-
     </div>
-
-    <div class="home-main">
-      <div class="home-entry">
-        <transition name='main-fade'>
-          <router-view></router-view>
-        </transition>
-      </div>
-    </div>
-
-    <am-load v-show='loadding'></am-load>
-
-  </div>
+  </transition>
 </template>
 
 <script>
-
-  import {
-    mapGetters,
-    mapActions
-  } from 'vuex'
-
-  import {
-    lan
-  } from '../vuex/types'
-
   export default {
+
+    data() {
+      return {
+      }
+    },
 
     components: {
     },
 
-    data() {
-      return {
-        loadding: true,
-        currentLanguage: true
-      }
-    },
-
-    computed: {
-      ...mapGetters({
-        cn: lan.GCN,
-        en: lan.GEN
-      })
-    },
-
     methods: {
-      ...mapActions({
-        changCn: lan.ACN,
-        changEn: lan.AEN
-      }),
-      redirectRouter() {
-        this.$router.push('./me')
-      },
-      transformLoad() {
-        setTimeout(() => {
-          this.loadding = false
-        }, 500)
-      },
-      selectCn() {
-        this.cn()
-      },
-      selectEn() {
-        this.en()
+      goEn() {
+        window.alert(111)
       }
-    },
-
-    mounted() {
-      this.transformLoad()
     }
   }
 </script>
+
 <style lang='scss'>
-@import '../assets/styles/var.scss';
   .home {
-    display: flex;
-    flex-direction: column;
-  }
-  .home-head {
-    padding: 2rem 7rem;
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-
-    .home-head-logo {
-      display: flex;
-      align-items: center;
-      img {
-        width: 5rem;
-      }
-      p {
-        margin: 0 3rem;
-        font-family: fantasy;
-        font-size: 2rem;
-      }
-    }
-
-    .home-nav {
-      display: flex;
-      justify-content: space-between;
-      &>ul {
-        width: 100%;
-        display: flex;
-        li {
-          position: relative;
-          font-size: 2rem;
-          align-items: center;
-          a {
-            width: 100%;
-            height: 100%;
-            padding: 1rem 2rem;
-            display: inline-block;
-            border-radius: 0.3rem;
-            box-sizing: border-box;
-          }
-          .router-link-active {
-            animation: navAnimation .5s;
-            background: $borderColor;
-            svg {
-              fill: $primeColor;
-            }
-          }
-        }
-        li:hover {
-          &:after {
-            content: '';
-            height: 0.2rem;
-            width: 100%;
-            display: block;
-            background-color: $primeColor;
-            position: absolute;
-            color: $primeColor;
-            animation: navBorderAnimation .5s;
-          }
-        }
-      }
-    }
-
-    .head-language {
-      & {
-        position: relative;
-        display: flex;
-        align-items: center;
-        margin-left: $commonDistance;
-        text-align: center;
-        width: 8rem;
-        justify-content: space-between;
-      }
-      span {
-        display: block;
-      }
-      span:hover {
-        cursor: pointer;
-      }
-      .current-language {
-        display: block;
-        font-size: 1.6rem;
-        color: $primeColor;
-        animation: toggle-small-big .5s linear;
-      }
-      .waiting-language {
-        animation: toggle-big-small .5s linear;
-      }
-      @keyframes toggle-big-small {
-        from {
-          font-size: 1.6rem;
-          color: $primeColor;
-        }
-        to {
-          font-size: 1rem;
-          color: #000;
-        }
-      }
-      @keyframes toggle-small-big {
-        from {
-          font-size: 1rem;
-          color: #000;
-        }
-        to {
-          font-size: 1.6rem;
-          color: $primeColor;
-        }
-      }
-    }
+    justify-content: center;
+    position: absolute;
   }
 
-
-  .home-main {
-    flex: 1;
-    display: flex;
-    background: #f5f5f5;
-    padding: 0 5rem;
-
-    .home-entry {
-      flex: 1;
-      margin: $commonDistance;
-      background: #fff;
-      border-radius: 0.5rem;
-      padding: $commonDistance;
-    }
+  .home-fade-leave-active {
+    animation: fadeOut .5s linear;
   }
 
+  .home__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url('../assets/images/mac.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+  }
 
-  @keyframes navAnimation {
+  .home__main {
+    text-align: center;
+    filter: blur(0px);
+    font-size: 26px;
+
+    .home__main__main {
+      margin-top: 20px;
+      color: #fff;
+    }
+
+    img {
+      width: 100px;
+      height: auto;
+      border-radius: 50%;
+    }
+
+    a {
+      color: #fff;
+    }
+
+  }
+
+  @keyframes fadeOut {
     from {
-      background: none;
+      top: 0px;
+      opacity: 0;
     }
+
     to {
-      background: $borderColor;
-    }
-  }
-  @keyframes navBorderAnimation {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
+      top: -1000px;
+      opacity: 1;
     }
   }
 </style>
