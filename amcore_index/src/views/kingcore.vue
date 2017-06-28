@@ -1,0 +1,131 @@
+<template>
+  <div class="project">
+
+    <div class="cn__banner">
+      <p>项目经验</p>
+    </div>
+
+    <div class="project__main">
+
+      <div class="project__main__item">
+        <p class="item__name">kingcore电商</p>
+        <p class="item__content">
+          <p class="item__content__title">
+            kingcore前台页面
+          </p>
+          <p class="item__content__content">
+            语言的选择（利用vuex进行语言状态的读取与选择）
+            首页热销商品的展示
+            商品列表页
+            商品详情页（购买链接外链亚马逊）
+          </p>
+        </p>
+        <p class="item__content">
+          <p class="item__content__title">
+            kingcore后台管理
+          </p>
+          <p class="item__content__content">
+            阿道夫啦枷梢对方理解啊收到了房间阿里斯顿解放啦枷梢对方
+          </p>
+        </p>
+      </div>
+
+    </div>
+
+    <div class="page__next" @click='goPerson'>
+      <i class="arrow-first fa fa-caret-down"></i>
+      <i class="arrow-last fa fa-chevron-down"></i>
+    </div>
+
+  </div>
+</template>
+
+<script>
+  export default {
+    methods: {
+      goPerson() {
+        this.$router.push('/person')
+      }
+    }
+  }
+</script>
+
+<style lang='scss'>
+  .project {
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+    .cn__banner {
+      font-size: 30px;
+      margin: 0 30px;
+      font-weight: bold;
+      box-sizing: border-box;
+      border-bottom: 1px solid #ececec;
+    }
+
+    .project__main {
+      flex: 1;
+      margin: 0 30px;
+      font-size: 16px;
+      position: relative;
+
+      .project__main__item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: fadeIn 1s;
+
+        .item__name {
+          font-size: 20px;
+          margin: 20px 0;
+        }
+        .item__content__title {
+          color: #000;
+          margin: 0px 0px 10px 0px;
+        }
+        .item__content__content {
+          line-height: 1.5;
+          color: #999999;
+        }
+
+      }
+    }
+
+    .page__next {
+      position: absolute;
+      height: 50px;
+      width: 100px;
+      left: 50%;
+      margin-left: -50px;
+      bottom: 0;
+      text-align: center;
+      animation: fadeUp 2s;
+
+      .arrow-first {
+        position: absolute;
+        display: block;
+        width: 20px;
+        left: 50%;
+        margin-left: -10px;
+        top: -2px;
+        font-size: 20px;
+        color: #000;
+        animation: fadeOpacity 2s infinite;
+      }
+
+      .arrow-last {
+        font-size: 30px;
+        display: block;
+        height: 50px;
+        color: #000;
+        animation: fadeOpacity 2s .5s infinite;
+      }
+
+    }
+
+  }
+</style>

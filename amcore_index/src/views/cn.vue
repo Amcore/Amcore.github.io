@@ -27,7 +27,7 @@
           </div>
       </div>
 
-      <div class="page__next">
+      <div class="page__next" @click='goWork'>
         <i class="arrow-first fa fa-caret-down"></i>
         <i class="arrow-last fa fa-chevron-down"></i>
       </div>
@@ -37,10 +37,24 @@
   </transition>
 </template>
 
+<script>
+  export default {
+
+    methods: {
+      goWork() {
+        this.$router.push('/work')
+      }
+    }
+  }
+</script>
+
 <style lang='scss'>
   .cn {
     height: 100%;
     width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
     display: flex;
     flex-direction: column;
   }
@@ -103,7 +117,9 @@
   .page__next {
     position: absolute;
     height: 50px;
-    width: 100%;
+    width: 100px;
+    left: 50%;
+    margin-left: -50px;
     bottom: 0;
     text-align: center;
     animation: fadeUp 2s;
@@ -135,54 +151,4 @@
     animation: fadeIn 1s linear;
   }
 
-  @keyframes fadeIn {
-    from {
-      top: 300px;
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-      top: 0px;
-    }
-  }
-
-  @keyframes fadeLeft {
-    from {
-      left: -1000px;
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-      left: 0px;
-    }
-  }
-
-  @keyframes fadeOpacity {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes fadeRight {
-    from {
-      right: -1000px;
-    }
-    to {
-      right: 0;
-    }
-  }
-
-  @keyframes fadeUp {
-    from {
-      bottom: -1000px;
-    }
-    to {
-      bottom: 0;
-    }
-  }
 </style>
