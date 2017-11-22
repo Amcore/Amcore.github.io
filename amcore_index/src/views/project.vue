@@ -42,6 +42,7 @@
 </script>
 
 <style lang='scss'>
+@import '../assets/styles/var.scss';
   .project {
     height: 100%;
     width: 100%;
@@ -49,6 +50,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    background: $backgroundColor;
 
     .cn__banner {
       font-size: 30px;

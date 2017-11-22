@@ -8,7 +8,12 @@
 
       <div class="work__main">
         <p class="work__tenmaker">南京十匠电子商务有限公司</p>
-        <p class="work__tenmaker__time">2016.7～至今</p>
+        <p class="work__tenmaker__time">2016.7～1016.6</p>
+      </div>
+
+      <div class="work__main">
+        <p class="work__tenmaker">南京1001号自动化科技有限公司</p>
+        <p class="work__tenmaker__time">2017.7～至今</p>
       </div>
 
       <div class="page__next" @click='goProject'>
@@ -31,6 +36,7 @@
 </script>
 
 <style lang='scss'>
+@import '../assets/styles/var.scss';
   .work {
     height: 100%;
     width: 100%;
@@ -38,6 +44,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    background: $backgroundColor;
   }
 
   .cn__banner {
@@ -55,7 +62,7 @@
   .work__main {
     margin: 0 30px;
     font-size: 24px;
-    flex: 1;
+    min-height: 200px;
     position: relative;
 
     .work__tenmaker {

@@ -2,6 +2,8 @@
   <transition name='home-fade'>
     <div class='home'>
       <div class="home__bg">
+        <p class="balloon-red">hello</p>
+        <p class="balloon-blue" @click='toResume'>entry</p>
       </div>
       <div class="home__main"
       @click='toResume'>
@@ -34,6 +36,7 @@
 </script>
 
 <style lang='scss'>
+@import '../assets/styles/var.scss';
   .home {
     height: 100%;
     width: 100%;
@@ -53,11 +56,38 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: url('../assets/images/mac.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.8;
+    background: $backgroundColor;
+
+    .balloon-red {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      top: 100px;
+      left: 50px;
+      border-radius: 50%;
+      background: rgba(255, 0, 30, .7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 20px;
+      animation: riseUp 1s cubic-bezier(0, 0, 0.37, 1.84);
+    }
+    .balloon-blue {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      top: 150px;
+      left: 150px;
+      border-radius: 50%;
+      background: rgba(0, 200, 255, .7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 20px;
+      animation: riseUp-blue 1s cubic-bezier(0, 0, 0.37, 1.84);
+    }
   }
 
   .home__main {
@@ -80,6 +110,50 @@
       color: #fff;
     }
 
+  }
+
+  @keyframes riseUp-blue {
+    0% {
+      top: -1000px;
+      opacity: 0;
+    }
+
+    50% {
+      top: 150px;
+      opacity: 0.8;
+    }
+
+    75% {
+      top: 180px;
+      opacity: 0.8;
+    }
+
+    100% {
+      top: 150px;
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes riseUp {
+    0% {
+      top: -1000px;
+      opacity: 0;
+    }
+
+    50% {
+      top: 100px;
+      opacity: 0.8;
+    }
+
+    75% {
+      top: 130px;
+      opacity: 0.8;
+    }
+
+    100% {
+      top: 100px;
+      opacity: 0.7;
+    }
   }
 
   @keyframes fadeOut {

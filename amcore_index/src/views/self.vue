@@ -30,9 +30,9 @@
             其他信息
           </p>
           <p class="item__content__content">
-            个人博客：<br>
+            <span class="blog">个人博客</span>
             <a href="http://www.jianshu.com/u/6feba298ece4">http://www.jianshu.com/u/6feba298ece4</a>
-            github:<br>
+            <span class="github">github</span>
             <a href="https://github.com/Amcore">https://github.com/Amcore</a>
           </p>
         </p>
@@ -104,6 +104,13 @@
           margin-bottom: 10px;
           line-height: 1.5;
           color: #999999;
+
+          .blog {
+            display: block;
+          }
+          .github {
+            display: block;
+          }
 
           a {
             font-size: 14px;

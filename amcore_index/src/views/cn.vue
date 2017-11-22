@@ -13,8 +13,8 @@
             <p class="cn__title__name">年龄:</p>
             <p class="cn__title__name">电话:</p>
             <p class="cn__title__name">邮箱:</p>
-            <p class="cn__title__name">毕业学校:</p>
             <p class="cn__title__name">专业:</p>
+            <p class="cn__title__name">毕业学校:</p>
           </div>
 
           <div class="cn__content">
@@ -22,8 +22,8 @@
             <p class="cn__title__name">25</p>
             <p class="cn__title__name">17712859212</p>
             <p class="cn__title__name">173677402@qq.com</p>
-            <p class="cn__title__name">南京中医药大学</p>
             <p class="cn__title__name">计算机科学与技术</p>
+            <p class="cn__title__name">南京中医药大学</p>
           </div>
       </div>
 
@@ -49,6 +49,7 @@
 </script>
 
 <style lang='scss'>
+@import '../assets/styles/var.scss';
   .cn {
     height: 100%;
     width: 100%;
@@ -57,6 +58,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    background: $backgroundColor;
   }
 
   .cn__banner {

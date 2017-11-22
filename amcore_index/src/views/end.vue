@@ -54,11 +54,6 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: url('../assets/images/mac.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.8;
   }
 
   .home__main {
@@ -68,7 +63,7 @@
 
     .home__main__main {
       margin-top: 20px;
-      color: #fff;
+      color: #000;
     }
 
     img {
@@ -78,7 +73,7 @@
     }
 
     a {
-      color: #fff;
+      color: #000;
     }
 
   }
