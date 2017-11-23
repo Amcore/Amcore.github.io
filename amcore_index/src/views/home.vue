@@ -1,18 +1,22 @@
 <template>
   <transition name='home-fade'>
-    <div class='home'>
-      <div class="home__bg">
-        <p class="balloon-red">hello</p>
-        <p class="balloon-blue" @click='toResume'>entry</p>
-      </div>
-      <div class="home__main"
-      @click='toResume'>
-        <img src="../assets/images/logo.png" alt="">
-        <div class="home__main__main">
-          <router-link to='/cn'>Cn</router-link>
+    <v-touch
+      style='height: 100%'
+      v-on:swipeup="nextPage">
+      <div class='home'>
+        <div class="home__bg">
+          <p class="balloon-red">hello</p>
+          <p class="balloon-blue" @click='toResume'>entry</p>
+        </div>
+        <div class="home__main"
+        @click='toResume'>
+          <img src="../assets/images/logo.png" alt="">
+          <div class="home__main__main">
+            <router-link to='/cn'>潘敏敏个人简历</router-link>
+          </div>
         </div>
       </div>
-    </div>
+    </v-touch>
   </transition>
 </template>
 
@@ -29,6 +33,9 @@
 
     methods: {
       toResume() {
+        console.log('...')
+      },
+      nextPage() {
         this.$router.push('/cn')
       }
     }
@@ -107,7 +114,7 @@
     }
 
     a {
-      color: #fff;
+      color: $grayFont;
     }
 
   }

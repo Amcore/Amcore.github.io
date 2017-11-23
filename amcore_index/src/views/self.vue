@@ -1,4 +1,7 @@
 <template>
+  <v-touch
+    style='height: 100%'
+    v-on:swipeup="goEnd">
   <div class="project">
 
     <div class="cn__banner">
@@ -46,6 +49,7 @@
     </div>
 
   </div>
+</v-touch>
 </template>
 
 <script>

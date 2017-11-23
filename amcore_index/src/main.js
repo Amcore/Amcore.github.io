@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './vuex/store'
+import VueTouch from 'vue-touch'
 
 import Icon from 'vue-icon'
 import AmLoad from './components/am-load'
@@ -13,6 +14,7 @@ import 'font-awesome/css/font-awesome.css'
 
 Vue.component('am-icon', Icon)
 Vue.component('AmLoad', AmLoad)
+Vue.use(VueTouch, {name: 'v-touch'})
 
 Vue.config.productionTip = false
 

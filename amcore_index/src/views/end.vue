@@ -1,17 +1,21 @@
 <template>
   <transition name='home-fade'>
-    <div class='home'>
-      <div class="home__bg">
-      </div>
-      <div class="home__main">
-        <div class="home__main__main">
-          <router-link to='/end'>End</router-link>
+    <v-touch
+      style='height: 100%'
+      v-on:swipedown="$router.push('/self')">
+      <div class='home' style='height: 100%'>
+        <div class="home__bg">
         </div>
-        <p>
-          <router-link to='/cn'>还想再看一遍吗？</router-link>
-        </p>
+        <div class="home__main">
+          <div class="home__main__main">
+            <router-link to='/end'>End</router-link>
+          </div>
+          <p>
+            <router-link to='/cn'>还想再看一遍吗？</router-link>
+          </p>
+        </div>
       </div>
-    </div>
+    </v-touch>
   </transition>
 </template>
 
@@ -35,6 +39,7 @@
 </script>
 
 <style lang='scss'>
+@import '../assets/styles/var.scss';
   .home {
     height: 100%;
     width: 100%;
@@ -73,7 +78,7 @@
     }
 
     a {
-      color: #000;
+      color: $grayFont;
     }
 
   }

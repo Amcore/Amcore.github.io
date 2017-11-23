@@ -1,34 +1,39 @@
 <template>
-  <div class="project">
+  <v-touch
+    style='height: 100%'
+    v-on:swipeup="goBanqiao"
+    v-on:swipedown="$router.push('/work')">
+    <div class="project">
 
-    <div class="cn__banner">
-      <p>项目经验</p>
-    </div>
+      <div class="cn__banner">
+        <p>项目经验</p>
+      </div>
 
-    <div class="project__main">
+      <div class="project__main">
 
-      <div class="project__main__item">
-        <p class="item__name">磐晟云平台</p>
-        <p class="item__content">
-          <p class="item__content__title">
-            用印申请流程
+        <div class="project__main__item">
+          <p class="item__name">磐晟云平台</p>
+          <p class="item__content">
+            <p class="item__content__title">
+              用印申请流程
+            </p>
+            <p class="item__content__content">
+              包括用印添加，用印审批，用印完成。
+              基于Vue开发，其中部分组件利用了element UI进行开发，Vuex进行用户管理状态。同时也开发了一些公共组件，文件上传组件，用印弹窗等。
+              应用promise 与async await新特性（公司后端用java)
+            </p>
           </p>
-          <p class="item__content__content">
-            包括用印添加，用印审批，用印完成。
-            基于Vue开发，其中部分组件利用了element UI进行开发，Vuex进行用户管理状态。同时也开发了一些公共组件，文件上传组件，用印弹窗等。
-            应用promise 与async await新特性（公司后端用java)
-          </p>
-        </p>
+        </div>
+
+      </div>
+
+      <div class="page__next" @click='goBanqiao'>
+        <i class="arrow-first fa fa-caret-down"></i>
+        <i class="arrow-last fa fa-chevron-down"></i>
       </div>
 
     </div>
-
-    <div class="page__next" @click='goBanqiao'>
-      <i class="arrow-first fa fa-caret-down"></i>
-      <i class="arrow-last fa fa-chevron-down"></i>
-    </div>
-
-  </div>
+  </v-touch>
 </template>
 
 <script>

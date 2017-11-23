@@ -1,27 +1,30 @@
 <template>
   <transition>
-    <div class="work">
+    <v-touch
+      style='height: 100%'
+      v-on:swipeup="goProject"
+      v-on:swipedown="$router.push('/cn')">
+      <div class="work">
+        <div class="cn__banner">
+          <p>工作经历</p>
+        </div>
 
-      <div class="cn__banner">
-        <p>工作经历</p>
-      </div>
+        <div class="work__main">
+          <p class="work__tenmaker">南京十匠电子商务有限公司</p>
+          <p class="work__tenmaker__time">2016.7～1016.6</p>
+        </div>
 
-      <div class="work__main">
-        <p class="work__tenmaker">南京十匠电子商务有限公司</p>
-        <p class="work__tenmaker__time">2016.7～1016.6</p>
-      </div>
+        <div class="work__main">
+          <p class="work__tenmaker">南京1001号自动化科技有限公司</p>
+          <p class="work__tenmaker__time">2017.7～至今</p>
+        </div>
 
-      <div class="work__main">
-        <p class="work__tenmaker">南京1001号自动化科技有限公司</p>
-        <p class="work__tenmaker__time">2017.7～至今</p>
-      </div>
-
-      <div class="page__next" @click='goProject'>
-        <i class="arrow-first fa fa-caret-down"></i>
-        <i class="arrow-last fa fa-chevron-down"></i>
-      </div>
-
+        <div class="page__next" @click='goProject'>
+          <i class="arrow-first fa fa-caret-down"></i>
+          <i class="arrow-last fa fa-chevron-down"></i>
+        </div>
     </div>
+  </v-touch>
   </transition>
 </template>
 

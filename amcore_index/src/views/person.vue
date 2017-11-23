@@ -1,4 +1,8 @@
 <template>
+  <v-touch
+    style='height: 100%'
+    v-on:swipeup="goSelf"
+    v-on:swipedown="$router.push('/kingcore')">
   <div class="project">
 
     <div class="cn__banner">
@@ -51,6 +55,7 @@
     </div>
 
   </div>
+</v-touch>
 </template>
 
 <script>

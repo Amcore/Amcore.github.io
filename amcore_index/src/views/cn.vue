@@ -1,39 +1,40 @@
 <template>
   <transition name='cn-fade'>
-    <div class="cn">
+    <v-touch
+      style='height: 100%'
+      v-on:swipeup="goWork"
+      v-on:swipedown="$router.push('/')">
+      <div class="cn">
+        <div class="cn__banner">
+          <p>个人信息</p>
+        </div>
 
+        <div class="cn__main">
+            <div class="cn__title">
+              <p class="cn__title__name">姓名:</p>
+              <p class="cn__title__name">年龄:</p>
+              <p class="cn__title__name">电话:</p>
+              <p class="cn__title__name">邮箱:</p>
+              <p class="cn__title__name">专业:</p>
+              <p class="cn__title__name">毕业学校:</p>
+            </div>
 
-      <div class="cn__banner">
-        <p>个人信息</p>
+            <div class="cn__content">
+              <p class="cn__title__name">潘敏敏</p>
+              <p class="cn__title__name">25</p>
+              <p class="cn__title__name">17712859212</p>
+              <p class="cn__title__name">173677402@qq.com</p>
+              <p class="cn__title__name">计算机科学与技术</p>
+              <p class="cn__title__name">南京中医药大学</p>
+            </div>
+        </div>
+
+        <div class="page__next" @click='goWork'>
+          <i class="arrow-first fa fa-caret-down"></i>
+          <i class="arrow-last fa fa-chevron-down"></i>
+        </div>
       </div>
-
-      <div class="cn__main">
-          <div class="cn__title">
-            <p class="cn__title__name">姓名:</p>
-            <p class="cn__title__name">年龄:</p>
-            <p class="cn__title__name">电话:</p>
-            <p class="cn__title__name">邮箱:</p>
-            <p class="cn__title__name">专业:</p>
-            <p class="cn__title__name">毕业学校:</p>
-          </div>
-
-          <div class="cn__content">
-            <p class="cn__title__name">潘敏敏</p>
-            <p class="cn__title__name">25</p>
-            <p class="cn__title__name">17712859212</p>
-            <p class="cn__title__name">173677402@qq.com</p>
-            <p class="cn__title__name">计算机科学与技术</p>
-            <p class="cn__title__name">南京中医药大学</p>
-          </div>
-      </div>
-
-      <div class="page__next" @click='goWork'>
-        <i class="arrow-first fa fa-caret-down"></i>
-        <i class="arrow-last fa fa-chevron-down"></i>
-      </div>
-
-
-    </div>
+    </v-touch>
   </transition>
 </template>
 
@@ -58,7 +59,6 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    background: $backgroundColor;
   }
 
   .cn__banner {

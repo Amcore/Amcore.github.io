@@ -1,55 +1,59 @@
 <template>
-  <div class="project">
+  <v-touch
+    style='height: 100%'
+    v-on:swipeup="goPerson"
+    v-on:swipedown="$router.push('/banqiao')">
+    <div class="project">
+      <div class="cn__banner">
+        <p>项目经验</p>
+      </div>
 
-    <div class="cn__banner">
-      <p>项目经验</p>
-    </div>
+      <div class="project__main">
 
-    <div class="project__main">
+        <div class="project__main__item">
+          <p class="item__name">kingcore电商</p>
+          <p class="item__content">
+            <p class="item__content__title">
+              kingcore前台页面
+            </p>
+            <p class="item__content__content">
+              语言的选择（利用vuex进行语言状态的读取与选择）
+              首页热销商品的展示
+              商品列表页
+              商品详情页（购买链接外链亚马逊）
+            </p>
+          </p>
+          <p class="item__content">
+            <p class="item__content__title">
+              kingcore后台管理
+            </p>
+            <p class="item__content__content">
+              菜单管理，分类管理，产品管理，首页导航管理等，轮播图管理。
+              自行开发菜单列表组件，文件上传组件。分级菜单分级处理。
+            </p>
+          </p>
+          <p class="item__content">
+            <p class="item__content__title">
+              项目地址
+            </p>
+            <p class="item__content__content">
+              kingCore:
+              <a href="http://www.kingcore.tenmaker.com">www.kingcore.tenmaker.com</a><br>
+              后台:
+              <a href="http://www.eadmin.tenmaker.com">www.eadmin.tenmaker.com</a>
+            </p>
+          </p>
+        </div>
 
-      <div class="project__main__item">
-        <p class="item__name">kingcore电商</p>
-        <p class="item__content">
-          <p class="item__content__title">
-            kingcore前台页面
-          </p>
-          <p class="item__content__content">
-            语言的选择（利用vuex进行语言状态的读取与选择）
-            首页热销商品的展示
-            商品列表页
-            商品详情页（购买链接外链亚马逊）
-          </p>
-        </p>
-        <p class="item__content">
-          <p class="item__content__title">
-            kingcore后台管理
-          </p>
-          <p class="item__content__content">
-            菜单管理，分类管理，产品管理，首页导航管理等，轮播图管理。
-            自行开发菜单列表组件，文件上传组件。分级菜单分级处理。
-          </p>
-        </p>
-        <p class="item__content">
-          <p class="item__content__title">
-            项目地址
-          </p>
-          <p class="item__content__content">
-            kingCore:
-            <a href="http://www.kingcore.tenmaker.com">www.kingcore.tenmaker.com</a><br>
-            后台:
-            <a href="http://www.eadmin.tenmaker.com">www.eadmin.tenmaker.com</a>
-          </p>
-        </p>
+      </div>
+
+      <div class="page__next" @click='goPerson'>
+        <i class="arrow-first fa fa-caret-down"></i>
+        <i class="arrow-last fa fa-chevron-down"></i>
       </div>
 
     </div>
-
-    <div class="page__next" @click='goPerson'>
-      <i class="arrow-first fa fa-caret-down"></i>
-      <i class="arrow-last fa fa-chevron-down"></i>
-    </div>
-
-  </div>
+  </v-touch>
 </template>
 
 <script>
