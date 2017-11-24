@@ -18,7 +18,7 @@
             message
           </p>
           <p class="item__content__content">
-            利用vue提供的extend方法对组件进行包装，添加在原姓链上从而方便调用。
+            利用vue提供的extend的API对组件进行包装，添加在原姓链上从而方便调用。
           </p>
         </p>
         <p class="item__content">
