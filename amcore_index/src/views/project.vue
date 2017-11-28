@@ -19,8 +19,18 @@
             </p>
             <p class="item__content__content">
               包括用印添加，用印审批，用印完成。
-              基于Vue开发，其中部分组件利用了element UI进行开发，Vuex进行用户管理状态。同时也开发了一些公共组件，文件上传组件，用印弹窗等。
+              基于Vue开发，其中部分组件利用了element UI进行开发。
+              根据公司自定义需求开发了一系列组件，其中包括上传组件。
+              用印弹窗等。
               应用promise 与async await新特性（公司后端用java)
+            </p>
+          </p>
+          <p class="item__content">
+            <p class="item__content__title">
+              涉及技术
+            </p>
+            <p class="item__content__content">
+              Vue、vuex、element-ui、e6、e7、sass、flex
             </p>
           </p>
         </div>

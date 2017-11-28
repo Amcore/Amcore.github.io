@@ -1,7 +1,7 @@
 <template>
   <v-touch
     style='height: 100%'
-    v-on:swipeup="goPerson"
+    v-on:swipeup="$router.push('/andon')"
     v-on:swipedown="$router.push('/banqiao')">
     <div class="project">
       <div class="cn__banner">
@@ -47,7 +47,7 @@
 
       </div>
 
-      <div class="page__next" @click='goPerson'>
+      <div class="page__next" @click="$router.push('/andon')">
         <i class="arrow-first fa fa-caret-down"></i>
         <i class="arrow-last fa fa-chevron-down"></i>
       </div>

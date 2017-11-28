@@ -2,13 +2,14 @@
   <transition name='home-fade'>
     <v-touch
       style='height: 100%'
+      v-on:swipeup="$router.push('/')"
       v-on:swipedown="$router.push('/self')">
       <div class='home' style='height: 100%'>
         <div class="home__bg">
         </div>
-        <div class="home__main">
-          <div class="home__main__main">
-            <router-link to='/end'>End</router-link>
+        <div class="end__main">
+          <div class="end__main__main">
+            <router-link to='/end'>结束了</router-link>
           </div>
           <p>
             <router-link to='/cn'>还想再看一遍吗？</router-link>
@@ -61,14 +62,21 @@
     width: 100%;
   }
 
-  .home__main {
+  .end__main {
     text-align: center;
     filter: blur(0px);
     font-size: 26px;
+    position: relative;
 
-    .home__main__main {
-      margin-top: 20px;
+    .end__main__main {
+      top: -30px;
+      left: 50%;
+      width: 200px;
+      margin-left: -100px;
+      text-align: center;
+      position: absolute;
       color: #000;
+      animation: endIn 1s cubic-bezier(0, 0, 0, 1.45);;
     }
 
     img {
@@ -92,6 +100,33 @@
     to {
       top: -1000px;
       opacity: 1;
+    }
+  }
+
+  @keyframes endIn {
+    0% {
+      top: -1000px;
+    }
+    25% {
+      top: -30px;
+    }
+    50% {
+      top: -60px;
+    }
+    70% {
+      top: -30px;
+    }
+    80% {
+      top: -50px;
+    }
+    90% {
+      top: -30px;
+    }
+    95% {
+      top: -40px;
+    }
+    100% {
+      top: -30px;
     }
   }
 </style>

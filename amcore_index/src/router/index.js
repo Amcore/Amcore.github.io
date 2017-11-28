@@ -11,6 +11,9 @@ const Kingcore = require('../views/kingcore')
 const Person = require('../views/person')
 const Self = require('../views/self')
 const End = require('../views/end')
+const Andon = require('../views/andon')
+const Printos = require('../views/printos')
+const Test = require('../views/test')
 
 Vue.use(Router)
 
@@ -58,6 +61,16 @@ export default new Router({
       component: Person
     },
     {
+      path: '/andon',
+      name: 'andon',
+      component: Andon
+    },
+    {
+      path: '/printos',
+      name: 'printos',
+      component: Printos
+    },
+    {
       path: '/self',
       name: 'self',
       component: Self
@@ -66,6 +79,11 @@ export default new Router({
       path: '/end',
       name: 'end',
       component: End
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: Test
     },
     {
       path: '*',
