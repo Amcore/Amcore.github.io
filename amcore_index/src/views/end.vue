@@ -12,7 +12,7 @@
             <router-link to='/end'>结束了</router-link>
           </div>
           <p>
-            <router-link to='/cn'>还想再看一遍吗？</router-link>
+            <router-link to='/cn'>还想再看一遍吗？<span>(点击此处)</span></router-link>
           </p>
         </div>
       </div>
@@ -76,7 +76,7 @@
       text-align: center;
       position: absolute;
       color: #000;
-      animation: endIn 1s cubic-bezier(0, 0, 0, 1.45);;
+      animation: endIn 1s cubic-bezier(0, 0, 0, 1.45);
     }
 
     img {
@@ -87,7 +87,12 @@
 
     a {
       color: $grayFont;
+
+      span {
+        color: #123aaa;
+      }
     }
+
 
   }
 

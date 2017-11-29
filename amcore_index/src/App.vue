@@ -12,7 +12,7 @@
 
     mounted() {
       FastClick.attach(document.body, false)
-      document.body.addEventListener('touchmove', (e) => {
+      document.body.addEventListener('touch', (e) => {
         e.preventDefault()
       }, false)
     }
