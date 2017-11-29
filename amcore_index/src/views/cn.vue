@@ -11,12 +11,30 @@
 
         <div class="cn__main">
             <div class="cn__title">
-              <p class="cn__title__name">姓名:</p>
-              <p class="cn__title__name">年龄:</p>
-              <p class="cn__title__name">电话:</p>
-              <p class="cn__title__name">邮箱:</p>
-              <p class="cn__title__name">专业:</p>
-              <p class="cn__title__name">毕业学校:</p>
+              <p class="cn__title__name">
+                <i class="fa fa-user"></i>
+                姓名:
+              </p>
+              <p class="cn__title__name">
+                <i class="fa fa-male"></i>
+                年龄:
+              </p>
+              <p class="cn__title__name">
+                <i class="fa fa-phone"></i>
+                电话:
+              </p>
+              <p class="cn__title__name">
+                <i class='fa fa-envelope'></i>
+                邮箱:
+              </p>
+              <p class="cn__title__name">
+                <i class="fa fa-institution"></i>
+                专业:
+              </p>
+              <p class="cn__title__name">
+                <i class="fa fa-mortar-board"></i>
+                毕业学校:
+              </p>
             </div>
 
             <div class="cn__content">
