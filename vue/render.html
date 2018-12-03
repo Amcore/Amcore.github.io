@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Panin | render函数</title>
+    <meta name="description" content="重在点滴积累">
+    
+    
+    <link rel="preload" href="/assets/css/9.styles.77057a7e.css" as="style"><link rel="preload" href="/assets/js/app.497a3de0.js" as="script"><link rel="preload" href="/assets/js/0.265d9e21.js" as="script"><link rel="prefetch" href="/assets/js/1.4207f66f.js"><link rel="prefetch" href="/assets/js/2.ec7dfd5d.js"><link rel="prefetch" href="/assets/js/3.5a125e9c.js"><link rel="prefetch" href="/assets/js/4.12940bd4.js"><link rel="prefetch" href="/assets/js/5.49d4dcb2.js"><link rel="prefetch" href="/assets/js/6.4098b598.js"><link rel="prefetch" href="/assets/js/7.760292e3.js"><link rel="prefetch" href="/assets/js/8.d510aa87.js">
+    <link rel="stylesheet" href="/assets/css/9.styles.77057a7e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/" class="home-link router-link-active"><!----><span class="site-name">
+      Panin
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">目录</span><span class="arrow right"></span></a><ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----><a href="/" class="nav-link">Home</a></li><li class="dropdown-item"><h4>你不知道的JavaScript</h4><ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/js/promise.html" class="nav-link">JS中的this</a></li></ul></li><li class="dropdown-item"><h4>Vue</h4><ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vue/" class="nav-link router-link-active">Vue</a></li><li class="dropdown-subitem"><a href="/vue/binding.html" class="nav-link">双向绑定原理</a></li><li class="dropdown-subitem"><a href="/vue/render.html" class="nav-link router-link-exact-active router-link-active">render函数</a></li></ul></li><li class="dropdown-item"><h4>工具使用</h4><ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/git/" class="nav-link">Git原理</a></li><li class="dropdown-subitem"><a href="/git/use.html" class="nav-link">Git使用</a></li></ul></li></ul></div></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">目录</span><span class="arrow right"></span></a><ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----><a href="/" class="nav-link">Home</a></li><li class="dropdown-item"><h4>你不知道的JavaScript</h4><ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/js/promise.html" class="nav-link">JS中的this</a></li></ul></li><li class="dropdown-item"><h4>Vue</h4><ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vue/" class="nav-link router-link-active">Vue</a></li><li class="dropdown-subitem"><a href="/vue/binding.html" class="nav-link">双向绑定原理</a></li><li class="dropdown-subitem"><a href="/vue/render.html" class="nav-link router-link-exact-active router-link-active">render函数</a></li></ul></li><li class="dropdown-item"><h4>工具使用</h4><ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/git/" class="nav-link">Git原理</a></li><li class="dropdown-subitem"><a href="/git/use.html" class="nav-link">Git使用</a></li></ul></li></ul></div></div><!----></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>你不知道的Javascript</span><!----></p><ul class="sidebar-group-items"><li><a href="/js/" class="sidebar-link">JS</a></li><li><a href="/js/this.html" class="sidebar-link">JavaScript中的this</a></li><li><a href="/js/promise.html" class="sidebar-link">promise</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading open"><span>Vue</span><!----></p><ul class="sidebar-group-items"><li><a href="/vue/" class="sidebar-link">Vue</a></li><li><a href="/vue/binding.html" class="sidebar-link">Vue双向绑定</a></li><li><a href="/vue/render.html" class="active sidebar-link">render函数</a><ul class="sidebar-sub-headers"></ul></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>工具使用</span><!----></p><ul class="sidebar-group-items"><li><a href="/git/" class="sidebar-link">Git原理</a></li><li><a href="/git/use.html" class="sidebar-link">Git使用</a></li></ul></div></li></ul></div><div class="page"><div class="content"><h3 id="render函数"><a href="#render函数" aria-hidden="true" class="header-anchor">#</a> render函数</h3><p>Vue 推荐在绝大多数情况下使用template来创建你的 HTML。
+然而在一些场景中，你真的需要JavaScript的完全编程的能力，这就是render函数，它比template更接近编译器。
+vue提供了render函数大大的提高了JavaScript的编程能力，虽然在日常的使用中是比较少见的但是理解render函数对应加深对Vue组件的使用都是很有帮助的。
+下面我们就针对render函数进行探讨。</p><p>render函数提供一个createElement，而createElement可接受三个参数具体情况如下：</p><h4 id="createelement和它的参数"><a href="#createelement和它的参数" aria-hidden="true" class="header-anchor">#</a><code>createElement</code>和它的参数</h4><pre class="language-js"><code><span class="token comment">// @returns {VNode}</span>
+<span class="token function">createElement</span><span class="token punctuation">(</span>
+  <span class="token comment">// {String | Object | Function}</span>
+  <span class="token comment">// 一个 HTML 标签字符串，组件选项对象，或者</span>
+  <span class="token comment">// 解析上述任何一种的一个 async 异步函数。必需参数。</span>
+  <span class="token string">'div'</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// {Object}</span>
+  <span class="token comment">// 一个包含模板相关属性的数据对象</span>
+  <span class="token comment">// 你可以在 template 中使用这些特性。可选参数。</span>
+  <span class="token punctuation">{</span>
+    <span class="token string">'class'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        container<span class="token punctuation">:</span> <span class="token boolean">true</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      style<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        cursor<span class="token punctuation">:</span> <span class="token string">'pointer'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      domProps<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        innHTML<span class="token punctuation">:</span> <span class="token string">'baz'</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// {String | Array}</span>
+  <span class="token comment">// 子虚拟节点 (VNodes)，由 `createElement()` 构建而成，</span>
+  <span class="token comment">// 也可以使用字符串来生成“文本虚拟节点”。可选参数。</span>
+  <span class="token punctuation">[</span>
+    <span class="token string">'先写一些文字'</span><span class="token punctuation">,</span>
+    <span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'h1'</span><span class="token punctuation">,</span> <span class="token string">'一则头条'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">createElement</span><span class="token punctuation">(</span>MyComponent<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      props<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        someProp<span class="token punctuation">:</span> <span class="token string">'foobar'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+</code></pre><h4 id="vue提供的实例方法在render函数中使用"><a href="#vue提供的实例方法在render函数中使用" aria-hidden="true" class="header-anchor">#</a> Vue提供的实例方法在render函数中使用</h4><pre class="language-js"><code>Vue<span class="token punctuation">.</span><span class="token function">components</span><span class="token punctuation">(</span><span class="token string">'dom-input'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    render<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>createElement<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> _this <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        domPopps<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          value<span class="token punctuation">:</span> _this<span class="token punctuation">.</span>name
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        on<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          input<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            _this<span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">,</span> event<span class="token punctuation">.</span>taget<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    props<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      value<span class="token punctuation">:</span> String
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+    data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      pValue<span class="token punctuation">:</span> <span class="token string">''</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>上面的例子中我们创建了一个input组件，在组件中当输入的触发了input事件emit了input的value；
+而在外层中接受了这个value让pValue的值等于value。
+而pValue又通过props把值传入input组件中从而实现了类似v-model的数据绑定。</p><div class="tip custom-block"><p class="custom-block-title">TIP</p><p>通过了上面render函数的一个例子我们看到了props和事件的触发的使用。</p></div></div><!----><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/vue/binding.html" class="prev">
+          Vue双向绑定
+        </a></span><span class="next"><a href="/git/">
+          Git原理
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/assets/js/0.265d9e21.js" defer></script><script src="/assets/js/app.497a3de0.js" defer></script>
+  </body>
+</html>
